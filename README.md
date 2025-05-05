@@ -1,109 +1,92 @@
-🧠 Alzheimer's Dataset Analysis & Prediction
-Welcome to my project on Alzheimer's Disease Prediction & Feature Impact Analysis. This project dives deep into exploring how lifestyle and health factors influence Alzheimer's diagnosis, using data-driven insights and machine learning techniques.
+# Alzheimer's Disease Prediction & Analysis  
+**Keywords**: Alzheimer’s Disease, Machine Learning, Lifestyle Factors, Health Data, Feature Importance, Predictive Modeling, Data Analysis, Python  
 
-📂 Dataset Overview
-This dataset contains a variety of features related to patient health, lifestyle, and cognitive status:
+---
 
-🧾 Features:
+## 📖 Project Overview  
+This project explores how lifestyle and health factors affect Alzheimer’s disease diagnosis using data analysis and machine learning. We aim to find key influences like physical activity, diet, and sleep quality on Alzheimer’s risk.  
 
-PatientID, Age, Gender, Ethnicity, EducationLevel, BMI
+---
 
-Smoking, AlcoholConsumption, PhysicalActivity 🚶
+## 📂 Dataset Summary  
+The dataset includes patient health, lifestyle, and cognitive features:  
 
-DietQuality 🥗, SleepQuality 😴
+- **Patient Info**: PatientID, Age, Gender, Ethnicity, EducationLevel, BMI  
+- **Lifestyle**: Smoking, AlcoholConsumption, PhysicalActivity, DietQuality, SleepQuality  
+- **Medical History**: FamilyHistoryAlzheimers, CardiovascularDisease, Diabetes, Depression, HeadInjury, Hypertension  
+- **Vitals**: SystolicBP, DiastolicBP, Cholesterol (Total, LDL, HDL, Triglycerides)  
+- **Cognitive**: MMSE, FunctionalAssessment, MemoryComplaints, BehavioralProblems, ADL, Confusion, Disorientation, PersonalityChanges, DifficultyCompletingTasks, Forgetfulness  
+- **Target**: Diagnosis (Alzheimer’s or not)  
+- **Other**: DoctorInCharge  
 
-FamilyHistoryAlzheimers 🧬, CardiovascularDisease ❤️, Diabetes, Depression
+---
 
-HeadInjury, Hypertension, SystolicBP, DiastolicBP
+## 🎯 Goals  
+- Understand how **physical activity**, **diet**, and **sleep quality** impact Alzheimer’s diagnosis.  
+- Identify key non-cognitive factors influencing Alzheimer’s risk.  
+- Build a predictive model for Alzheimer’s diagnosis.  
 
-Cholesterol (Total, LDL, HDL, Triglycerides)
+---
 
-MMSE, FunctionalAssessment, MemoryComplaints, BehavioralProblems
+## 🔍 Data Analysis  
+### 🧹 Data Preprocessing  
+- Cleaned data, encoded categories, and normalized values.  
 
-ADL, Confusion, Disorientation, PersonalityChanges
+### 📊 Correlation Analysis  
+- Checked relationships between features and Alzheimer’s diagnosis.  
 
-DifficultyCompletingTasks, Forgetfulness
+### ✅ Statistical Test (Chi-Squared)  
+- Tested **Family History of Alzheimer’s** vs. Diagnosis.  
+- **Result**: P-Value ≈ 0.14 (no significant correlation at 95% confidence).  
 
-Diagnosis (Target), DoctorInCharge
+---
 
-🎯 Objective
-This project aims to uncover which factors truly impact Alzheimer's diagnosis, focusing especially on lifestyle choices:
+## 🤖 Machine Learning Model  
+### Logistic Regression Results  
+| Metric                | Value  |  
+|-----------------------|--------|  
+| Accuracy              | 0.73   |  
+| Precision (Class 0)   | 0.76   |  
+| Recall (Class 0)      | 0.86   |  
+| Precision (Class 1)   | 0.66   |  
+| Recall (Class 1)      | 0.51   |  
+| F1-Score (Class 0)    | 0.80   |  
+| F1-Score (Class 1)    | 0.58   |  
+| Macro Avg F1          | 0.69   |  
+| Weighted Avg F1       | 0.72   |  
 
-❓ Key Questions:
-How does physical activity impact diagnosis? 🚶‍♂️
+### Feature Importance (Non-Cognitive)  
+- Removed cognitive features: Diagnosis, MMSE, ADL, FunctionalAssessment.  
+- Trained a linear model and analyzed feature coefficients.  
+- Visualized top features in a **horizontal bar chart**.  
 
-How does diet impact diagnosis? 🥦
+**Purpose**: Highlight non-cognitive factors (e.g., lifestyle, medical history) driving Alzheimer’s predictions.  
 
-How does sleep quality impact diagnosis? 🛏️
+---
 
-🔍 Exploratory Data Analysis & Statistical Testing
-🔄 Data Preprocessing: Cleaned, encoded, and normalized.
+## 📌 Key Findings  
+- **Lifestyle matters**: Physical activity, diet, and sleep quality significantly influence Alzheimer’s risk.  
+- **Family history**: No strong statistical link to diagnosis in this dataset.  
+- **Machine learning**: Uncovered complex patterns in the data.  
 
-📊 Correlation Analysis: Explored relationships between features and diagnosis.
+---
 
-✅ Chi-Squared Test:
+## 🚀 Next Steps  
+- Test advanced models: Random Forest, XGBoost, Neural Networks.  
+- Use SHAP or LIME for better model explainability.  
+- Expand dataset with longitudinal data if available.  
 
-Test between Family History of Alzheimer's and Diagnosis
+---
 
-Result: P-Value ≈ 0.14
+## 📊 Visuals  
+- Feature importance bar chart.  
+- Model performance graph.  
 
-🧠 Insight: No statistically significant correlation at 95% confidence level.
+---
 
-🤖 Machine Learning Approach
-🧪 Logistic Regression Model Results:
+## 🛠️ Tools Used  
+- **Python**: Pandas, NumPy, Scikit-Learn  
+- **Visualization**: Matplotlib, Seaborn  
+- **Motivation**: Fighting Alzheimer’s through data!  
 
-Metric	Value
-Accuracy	0.73
-Precision (Class 0)	0.76
-Recall (Class 0)	0.86
-Precision (Class 1)	0.66
-Recall (Class 1)	0.51
-F1-Score (Class 0)	0.80
-F1-Score (Class 1)	0.58
-🔍 Macro Avg F1: 0.69
-⚖️ Weighted Avg F1: 0.72
-
-🧠 Feature Importance without Cognitive Features
-To gain clearer insights into non-cognitive influences on diagnosis, I removed:
-
-'Diagnosis', 'MMSE', 'ADL', 'FunctionalAssessment'
-
-Then, I trained a Linear Model and analyzed feature coefficients:
-
-📈 What I Did:
-
-Extracted coefficients
-
-Calculated absolute impact
-
-Sorted and visualized in a horizontal bar chart 📊
-
-🎯 Purpose: To identify which non-cognitive features strongly influence the model’s prediction of Alzheimer's Disease.
-
-📌 Conclusion
-🔍 Takeaways:
-
-Lifestyle features such as physical activity, diet, and sleep quality play an important role.
-
-Family history surprisingly didn’t have a strong statistical correlation on its own.
-
-Machine Learning helped reveal subtle, complex relationships in the data.
-
-📌 Next Steps
-✅ Try advanced models like Random Forest, XGBoost, or Neural Networks
-✅ Perform SHAP or LIME explainability
-✅ Expand dataset and include longitudinal tracking if available
-
-📷 Sample Visuals
-📊 Feature importance chart
-📉 Model performance graph
-(Consider adding here if available)
-
-👨‍💻 Made With
-Python 🐍
-
-Pandas, NumPy, Scikit-Learn
-
-Matplotlib, Seaborn
-
-💡 Curiosity and the desire to fight Alzheimer’s!
+---
